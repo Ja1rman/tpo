@@ -11,7 +11,8 @@ public class CsvWriter {
         try (CSVPrinter printer = CSVFormat.DEFAULT.print(out)) {
             printer.printRecord(x, res);
         } catch (IOException e) {
-            System.out.println("Ошибка названия файла");
+            System.out.println("Не удалось записать файл");
+            System.out.println("Ошибка: " + e.getMessage());
         }
     }
 }
