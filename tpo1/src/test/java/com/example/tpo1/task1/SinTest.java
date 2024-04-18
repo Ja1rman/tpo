@@ -30,4 +30,13 @@ public class SinTest {
                 () -> assertEquals(y, Sin.power_series(x, 100), DELTA)
         );
     }
+
+    @ParameterizedTest(name = "sin({0}) = {1}")
+    @DisplayName("Check positive/negative")
+    @ValueSource(doubles = {Math.PI / 2, Math.PI, 3 * Math.PI / 2, 2 * Math.PI})
+    void checkPositiveNegative(double x) {
+        Double positive = Sin.power_series(x, 100);
+        Double negative = Sin.power_series(-x, 100);
+        assertEquals(-negative, positive, DELTA);
+    }
 }
