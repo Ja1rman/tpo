@@ -17,6 +17,7 @@ public class Csc {
         this.sinInstance = new Sin();
     }
 
+
     public double calculate(double x, double eps) {
         double sin = sinInstance.calculate(x, eps);
         if (Double.isNaN(sin) || sin == 0.0) {
